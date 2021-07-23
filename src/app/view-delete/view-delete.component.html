@@ -1,0 +1,32 @@
+<div class="container py-5">
+    <div class="table-responsive">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>Qualification</th>
+                    <th>Mobile</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let a of user;index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{a.name}}</td>
+                    <td>{{a.email | uppercase}}</td>
+                    <td>{{a.gender}}</td>
+                    <td>{{a.age}}</td>
+                    <td>{{a.qualification}}</td>
+                    <td>{{a.mobile}}</td>
+                    <td class="text-end"> <button  (click)="ondelete(a.id)"><i class="fa fa-trash"></i></button>||
+                   <button (click)="onedit(user[i])"><i class="fa fa-edit"></i></button></td>
+                    
+                </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
